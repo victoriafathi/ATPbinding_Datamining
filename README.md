@@ -18,3 +18,7 @@ Il y a donc quelques répertoires qu'il vous faudra utiliser et compléter :
 
 - **19/05/2020** Matrice de données *individus-variables* à fournir avec les scripts et la documentation utilisateur pour l'obtenir (cf. répertoire data.preparation).
 - **10/06/2020** Fin du projet: Roland récupérera les dépôts de chaque projet pour évaluation (notamment les répertoires analysis et rapport).
+
+# Première étape : compte gitlab et clonage du projet
+
+La première étape pour vous va donc être de créer un compte gitlab si vous n'en avez pas. Et ensuite, de cloner ce projet et d'inviter l'autre membre de votre groupe pour le projet afin d'avoir un seul et même projet par groupe.
