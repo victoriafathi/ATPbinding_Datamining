@@ -1,4 +1,4 @@
-Répertoire à laisser vide sur gitlab mais qui localement devrait contenir les fichiers CSV de départ :
+**Répertoire à laisser vide sur gitlab** mais qui localement devrait contenir les fichiers CSV de départ :
 
 - Assembly.tsv.gz
 - Chromosome.tsv.gz

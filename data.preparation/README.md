@@ -1,1 +1,1 @@
-Scripts accompagnés de la documentation utilisateur permettant d'obtenir la matrice $individus \times variables$ qui servira pour le projet.
+Scripts accompagnés de la documentation utilisateur permettant d'obtenir la matrice *individus-variables* qui servira pour le projet.
