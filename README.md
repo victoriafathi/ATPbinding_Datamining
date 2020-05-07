@@ -1,6 +1,6 @@
 # Intro
 
-Ce projet gitlab va servir de point de départ pour la remise du projet de fouille de données. Il suffit de le cloner pour récupérer la structure de base et au fur et à mesure y ajouter les scripts de préparation des données pour obtenir matrice individus-variables qui servira pour l'analyse.
+Ce projet gitlab va servir de point de départ pour la remise du projet de fouille de données. Il suffit de le **cloner** sur votre compte gitlab pour récupérer la structure de base et au fur et à mesure y ajouter les scripts de préparation des données pour obtenir matrice individus-variables qui servira pour l'analyse, et ensuite l'analyse, et enfin le rapport.
 
 
 
