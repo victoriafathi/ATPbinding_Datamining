@@ -12,7 +12,7 @@ Bien qu'au format markdown, ce sera un vrai rapport de projet.
 
 Une introduction sur le contexte et les objectifs du projet.
 
-![](/home/barriot/box.local/TEACHING/2019-2020/M1/DataMining/DataMining-2018-19/DataMining.2017-18/projet/projet.2016-17/transporteurs.png)
+![Transporteur ABC](transporteurs.png)
 
 # Analyse
 
