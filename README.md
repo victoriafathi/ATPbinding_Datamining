@@ -1,6 +1,6 @@
 # Intro
 
-Ce projet gitlab va servir de point de départ pour la remise du projet de fouille de données. Il suffit de le **cloner** sur votre compte gitlab (en tant que projet privé auquel il faudra inviter Roland pour qu'il puisse y accéder) pour récupérer la structure de base et au fur et à mesure y ajouter les scripts de préparation des données pour obtenir matrice individus-variables qui servira pour l'analyse, et ensuite l'analyse, et enfin le rapport.
+Ce projet gitlab va servir de point de départ pour la remise du projet de fouille de données. Il suffit depuis votre compte gitlab de créer un projet à partir de ce dépôt pour récupérer la structure de base et au fur et à mesure y ajouter les scripts de préparation des données pour obtenir matrice individus-variables qui servira pour l'analyse, et ensuite l'analyse, et enfin le rapport.
 
 
 Il y a donc quelques répertoires qu'il vous faudra utiliser et compléter :
@@ -33,6 +33,12 @@ Gitlab va copier la totalité du projet et vous pourrez travailler sur votre pro
 
 # Remarques sur gitlab
 
-- L'idée est de vous forcer à utiliser git pour, si ce n'est pas déjà le cas, vous familiariser avec le suivi de versions de scripts et autres. C'est particulièrement important lorsqu'on a une version qui fonctionne et que l'on cherche à modifier. Et c'est une compétence qui est demandée dans le privé comme dans le public.
+- L'idée est de vous forcer à **utiliser git** pour, si ce n'est pas déjà le cas, vous familiariser avec le **suivi de versions** de scripts et autres. C'est particulièrement important lorsqu'on a une version qui fonctionne et que l'on cherche à modifier. Et c'est une **compétence demandée** dans le privé comme dans le public.
 - En plus, cela va me permettre de suivre le niveau d'activité de votre projet et des contributions.
-- Il est donc important pour chacun de vous d'utiliser git, gitlab et leurs fonctionnalités. Il ne s'agit surtout pas de cloner une fois le projet au début, puis de travailler uniquement sur votre copie, pour déposer toutes les modifications à la fin en une fois. Gitlab devrait vous permettre de vous répartir certaines tâches puis déposer et partager vos résultats avec l'autre membre de votre groupe. De même, pour la rédaction de la doc utilisateur et du rapport. Cela devrait vous permettre de vous répartir des parties à rédiger pour ensuite fusionner les documents produits chacun de votre côté.
+- Il est donc important pour chacun de vous d'utiliser git, gitlab et leurs fonctionnalités. Il ne s'agit surtout pas de cloner une fois le projet au début, puis de travailler uniquement sur votre copie, pour déposer toutes les modifications à la fin en une fois. Gitlab devrait **vous permettre de vous répartir certaines tâches** puis déposer et partager vos résultats avec l'autre membre de votre groupe. De même, pour la rédaction de la doc utilisateur et du rapport. Cela devrait vous permettre de vous répartir des parties à rédiger pour ensuite fusionner les documents produits chacun de votre côté.
+
+# Liens
+
+- sujet: http://silico.biotoul.fr/enseignement/m1/datamining/projet/sujet.html
+- données: https://silico.biotoul.fr/enseignement/m1/datamining/projet/data/
+
