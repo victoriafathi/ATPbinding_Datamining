@@ -1,7 +1,6 @@
 # Intro
 
-Ce projet gitlab va servir de point de départ pour la remise du projet de fouille de données. Il suffit de le **cloner** sur votre compte gitlab pour récupérer la structure de base et au fur et à mesure y ajouter les scripts de préparation des données pour obtenir matrice individus-variables qui servira pour l'analyse, et ensuite l'analyse, et enfin le rapport.
-
+Ce projet gitlab va servir de point de départ pour la remise du projet de fouille de données. Il suffit de le **cloner** sur votre compte gitlab (en tant que projet privé auquel il faudra inviter Roland pour qu'il puisse y accéder) pour récupérer la structure de base et au fur et à mesure y ajouter les scripts de préparation des données pour obtenir matrice individus-variables qui servira pour l'analyse, et ensuite l'analyse, et enfin le rapport.
 
 
 Il y a donc quelques répertoires qu'il vous faudra utiliser et compléter :
