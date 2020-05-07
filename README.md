@@ -22,3 +22,17 @@ Il y a donc quelques répertoires qu'il vous faudra utiliser et compléter :
 # Première étape : compte gitlab et clonage du projet
 
 La première étape pour vous va donc être de créer un compte gitlab si vous n'en avez pas. Et ensuite, de cloner ce projet et d'inviter l'autre membre de votre groupe pour le projet afin d'avoir un seul et même projet par groupe.
+
+Une fois que vous aurez un compte, pour importer ce projet dans votre compte :
+
+- Faire *New project*
+- Dans l'onglet *Import project* choisir *Repo by URL*
+- Mettre l'URL : https://gitlab.com/rbarriot/datamining.abc et renseigner le *Project name*
+
+Gitlab va copier la totalité du projet et vous pourrez travailler sur votre propre copie.
+
+# Remarques sur gitlab
+
+- L'idée est de vous forcer à utiliser git pour, si ce n'est pas déjà le cas, vous familiariser avec le suivi de versions de scripts et autres. C'est particulièrement important lorsqu'on a une version qui fonctionne et que l'on cherche à modifier. Et c'est une compétence qui est demandée dans le privé comme dans le public.
+- En plus, cela va me permettre de suivre le niveau d'activité de votre projet et des contributions.
+- Il est donc important pour chacun de vous d'utiliser git, gitlab et leurs fonctionnalités. Il ne s'agit surtout pas de cloner une fois le projet au début, puis de travailler uniquement sur votre copie, pour déposer toutes les modifications à la fin en une fois. Gitlab devrait vous permettre de vous répartir certaines tâches puis déposer et partager vos résultats avec l'autre membre de votre groupe. De même, pour la rédaction de la doc utilisateur et du rapport. Cela devrait vous permettre de vous répartir des parties à rédiger pour ensuite fusionner les documents produits chacun de votre côté.
