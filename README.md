@@ -27,7 +27,7 @@ Une fois que vous aurez un compte, pour importer ce projet dans votre compte :
 
 - Faire *New project*
 - Dans l'onglet *Import project* choisir *Repo by URL*
-- Mettre l'URL : https://gitlab.com/rbarriot/datamining.abc et renseigner le *Project name*
+- Mettre l'URL : https://gitlab.com/rbarriot/datamining.abc.git et renseigner le *Project name*
 
 Gitlab va copier la totalité du projet et vous pourrez travailler sur votre propre copie.
 
