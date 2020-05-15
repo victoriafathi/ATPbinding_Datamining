@@ -1,6 +1,6 @@
 Scripts accompagnés de la documentation utilisateur permettant d'obtenir la matrice *individus-variables* qui servira pour le projet.
 
-Pour le 20 mai, vous devez ajouter dans ce répertoire **l'ensembles des scripts** qui me permettront d'obtenir **la même matrice que vous** pour la suite de votre projet.
+**Pour le 20 mai**, vous devez ajouter dans ce répertoire **l'ensembles des scripts** qui me permettront d'obtenir **la même matrice que vous** pour la suite de votre projet. Envoyez-moi également le lien vers votre projet gitlab.
 
 Les scripts ne devraient utiliser que les données disponibles dans le répertoire `../data` ou bien la base de données fournies. Si des données supplémentaires sont utilisées, il vous faut les inclure dans votre répertoire `../data`.
 
