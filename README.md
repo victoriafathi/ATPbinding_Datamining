@@ -14,10 +14,11 @@ Il y a donc quelques répertoires qu'il vous faudra utiliser et compléter :
 - data: ce répertoire contient en théorie les fichiers CSV fournis mais **il ne faut pas** concrètement les mettre sur gitlab (ni autre média) puisque tout le monde les a déjà. En paramétrant git, cela permet de les avoir en local, avec les mêmes chemins et les mêmes noms, sans avoir à les mettre sur gitlab, et ainsi, les scripts de préparation des données devraient fonctionner plus facilement.
 
 
-# Calendrier 2019-20
+# Calendrier 2020-21
 
-- **20/05/2020** Matrice de données *individus-variables* à fournir avec les scripts et la documentation utilisateur pour l'obtenir (cf. répertoire data.preparation).
-- **10/06/2020** Fin du projet: Roland récupérera les dépôts de chaque projet pour évaluation (notamment les répertoires analysis et rapport).
+- **début mars** Groupes de projet (les membres du même groupe ne doivent pas faire parti du même groupe que pour le PTUT).
+- **début avril** Matrice de données *individus-variables* à fournir avec les scripts et la documentation utilisateur pour l'obtenir (cf. répertoire data.preparation).
+- **début mai** Fin du projet: Roland récupérera les dépôts de chaque projet pour évaluation (notamment les répertoires analysis et rapport).
 
 # Première étape : compte gitlab et clonage du projet
 
