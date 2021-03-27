@@ -1,2 +1,0 @@
-BD_USER = ""
-BD_PASSWORD = ""
