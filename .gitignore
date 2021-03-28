@@ -2,4 +2,4 @@ data/
 **/.Rhistory
 **/__pycache__
 **/.spyproject
-configurations/*
+**/configurations

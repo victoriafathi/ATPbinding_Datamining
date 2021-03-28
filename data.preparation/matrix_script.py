@@ -1,19 +1,19 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import mysql.connector as mc
-import configurations.config as config
+import configurations.config as config #file with user and password (for privacy)
 
 try:
-    # Connection à la base de donnée
+    # DataBase Connexion
     conn = mc.connect(host = 'localhost',
     database = 'fouille', 
-    user = config.BD_USER, # nom user dans le fichier config
-    password= config.BD_PASSWORD) # mot de passe dans le fichier config
+    user = config.BD_USER, 
+    password= config.BD_PASSWORD) 
                 
-except mc.Error as err: # si la connexion échoue
-    print(err)
+except mc.Error as err: # If connection fails
 
-finally:
+else:
     cursor = conn.cursor()
     #cursor.execute("""SELECT Gene_ID FROM Gene;""")
     #genes = cursor.fetchall()
@@ -23,6 +23,9 @@ finally:
     cursor.execute("""DROP VIEW IF EXISTS N;""")
     cursor.execute("""DROP VIEW IF EXISTS S;""")
     
+    # View with info on MSD domain for each Gene
+    # Retrieve max and min e_value of rpsblast 
+    # number of MSD domain
     cursor.execute("""
         CREATE VIEW M
             AS
@@ -42,6 +45,9 @@ finally:
               ON Gene.Gene_ID = D.Gene_ID
             ;""")
             
+    # View with info on NBD domain for each Gene
+        # Retrieve max and min e_value of rpsblast 
+        # number of MSD domain
     cursor.execute("""
             CREATE VIEW N
             AS
@@ -61,6 +67,9 @@ finally:
               ON Gene.Gene_ID = D.Gene_ID
             ;""")
     
+    # View with info on SBP domain for each Gene
+        # Retrieve max and min e_value of rpsblast 
+        # number of MSD domain
     cursor.execute("""
             CREATE VIEW S
             AS
