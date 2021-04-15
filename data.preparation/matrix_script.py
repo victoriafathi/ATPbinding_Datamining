@@ -12,7 +12,7 @@ try:
     password= config.BD_PASSWORD) 
                 
 except mc.Error as err: # If connection fails
-
+    print(err)
 else:
     cursor = conn.cursor()
     #cursor.execute("""SELECT Gene_ID FROM Gene;""")
@@ -87,6 +87,33 @@ else:
                   GROUP BY Gene_ID
               ) AS D
               ON Gene.Gene_ID = D.Gene_ID
+            ;""")
+    
+    cursor.execute("""
+            CREATE VIEW ABC
+            AS
+            SELECT T.Gene_id,
+              CASE
+                WHEN T.Type = 'ABC' 
+                  AND T.Identification_Status = 'Confirmed' 
+                  THEN TRUE
+                WHEN (T.Type IS NULL) 
+                  OR (T.Type != 'ABC'
+                    AND T.Identification_Status = 'Confirmed'
+                  ) THEN FALSE
+                ELSE NULL
+              END
+                AS ABC
+              
+              FROM (
+                SELECT Gene.Gene_ID, Type, Identification_Status
+                  FROM Gene LEFT JOIN (
+                    SELECT Gene_ID, Type, Identification_Status
+                      FROM Protein
+                      WHERE Identification_Status != 'Rejected'
+                  ) AS P
+                  ON Gene.Gene_ID = P.Gene_ID
+              ) AS T
             ;""")
         
     cursor.execute("""
