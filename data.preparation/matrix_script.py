@@ -22,6 +22,8 @@ else:
     cursor.execute("""DROP VIEW IF EXISTS M;""")
     cursor.execute("""DROP VIEW IF EXISTS N;""")
     cursor.execute("""DROP VIEW IF EXISTS S;""")
+    cursor.execute("""DROP VIEW IF EXISTS ABC;""")
+
     
     # View with info on MSD domain for each Gene
     # Retrieve max and min e_value of rpsblast 
@@ -123,3 +125,10 @@ else:
         ;""")
     
     data = cursor.fetchall()
+
+finally:
+ conn.commit()
+ if(conn.is_connected()):
+     cursor.close() # close cursor
+     conn.close() # close connection
+ 
