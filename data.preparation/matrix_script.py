@@ -109,12 +109,9 @@ else:
               
               FROM (
                 SELECT Gene.Gene_ID, Type, Identification_Status
-                  FROM Gene LEFT JOIN (
-                    SELECT Gene_ID, Type, Identification_Status
-                      FROM Protein
-                      WHERE Identification_Status != 'Rejected'
-                  ) AS P
+                  FROM Gene LEFT JOIN Protein AS P 
                   ON Gene.Gene_ID = P.Gene_ID
+                  WHERE NOT Identification_Status <=> 'Rejected'
               ) AS T
             ;""")
         
