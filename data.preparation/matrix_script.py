@@ -23,6 +23,7 @@ else:
     cursor.execute("""DROP VIEW IF EXISTS N;""")
     cursor.execute("""DROP VIEW IF EXISTS S;""")
     cursor.execute("""DROP VIEW IF EXISTS ABC;""")
+    cursor.execute("""DROP VIEW IF EXISTS IND_VAR_MATRIX""")
 
     
     # View with info on MSD domain for each Gene
@@ -116,10 +117,18 @@ else:
             ;""")
         
     cursor.execute("""
-        SELECT M.Gene_ID, M_Number, M_Min, M_Max, N_Number, N_Min, N_Max, S_Number, S_Min, S_Max
-          FROM M JOIN (N JOIN S ON N.Gene_ID = S.Gene_ID)
-          ON M.Gene_ID = N.Gene_ID
+        CREATE VIEW IND_VAR_MATRIX
+        AS
+        SELECT M.Gene_ID, M_Number, M_Min, M_Max, N_Number, N_Min, N_Max, S_Number, S_Min, S_Max, ABS(Start - End + 1) AS 
+        Gene_Size, Self_Score, ABC
+          FROM ((((M 
+            NATURAL JOIN N) 
+            NATURAL JOIN S) 
+            NATURAL JOIN ABC) 
+            NATURAL JOIN Gene)
         ;""")
+              
+    cursor.execute("""SELECT * FROM IND_VAR_MATRIX;""")
     
     data = cursor.fetchall()
 
