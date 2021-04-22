@@ -146,7 +146,7 @@ else:
       # Adding default value 
       for i in [2,3,5,6,8,9] :
           if line[i] == "*":
-              line[i]=float("inf")
+              line[i]= 10000
       
       matrix.writerow(line)
      
