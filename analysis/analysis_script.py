@@ -31,20 +31,21 @@ print(X[0])
 #X, y = make_classification(n_samples=1000, n_features=4, n_informative=2, 
 #                           n_redundant=0, random_state=0, shuffle=True)
 
-classifier = RandomForestClassifier()
+classifier = RandomForestClassifier(oob_score = True, criterion = "entropy")
 classifier.fit(X,y)
 test = classifier.estimators_[5]
 
-export_graphviz(test, 
-                out_file='tree.dot', 
-                feature_names = header[1:-1],
-                rounded = True, proportion = False, 
-                precision = 2, filled = True)
+#export_graphviz(test, 
+#                out_file='tree.dot', 
+#                feature_names = header[1:-1],
+#                rounded = True, proportion = False, 
+#                precision = 2, filled = True)
+#
+#from subprocess import call
+#call(['dot', '-Tpng', 'tree.dot', '-o', 'tree.png', '-Gdpi=600'])
 
-from subprocess import call
-call(['dot', '-Tpng', 'tree.dot', '-o', 'tree.png', '-Gdpi=600'])
-
-from IPython.display import Image
-Image(filename = 'tree.png')
+#from IPython.display import Image
+#Image(filename = 'tree.png')
 
 print(classifier.predict(to_classify))
+print(classifier.oob_score_)
