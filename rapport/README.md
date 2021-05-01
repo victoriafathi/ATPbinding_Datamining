@@ -30,7 +30,6 @@ L'objectif de ce projet est de mettre au point une méthode de classification de
 - utiliser l’arbre pour prédire les gènes annotés dont l’Identification_status = ‘pending’ ou null.  <br>
 
 
-
 **Analyse préliminaire des données pour les appréhender ainsi que les méthodes disponibles pour atteindre les objectifs.**  <br>
 
 ![Schéma de la Base Données](database_schema.png)

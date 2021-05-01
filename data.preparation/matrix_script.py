@@ -7,7 +7,7 @@ import argparse
 import csv
 
 parser = argparse.ArgumentParser(description='Matrix Creation')
-parser.add_argument('--database', '-db', type = str, help = "tsv file with id_cogs descriptions and type")
+parser.add_argument('--database', '-db', type = str, help = "database you want to connect to")
 parser.add_argument('--drop', '-d', required=False, action="store_true", help='drop all views')
 parser.add_argument('--create_views', '-c', required=False, action="store_true", help='create intermediary views')
 
@@ -16,12 +16,13 @@ args = parser.parse_args()
 try:
     # DataBase Connexion
     conn = mc.connect(host = 'localhost',
-    database = db, 
+    database = args.database, 
     user = config.BD_USER, 
     password= config.BD_PASSWORD) 
                 
 except mc.Error as err: # If connection fails
     print(err)
+
 else:
     cursor = conn.cursor()
     
