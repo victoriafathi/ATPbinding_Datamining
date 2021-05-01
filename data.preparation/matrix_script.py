@@ -6,7 +6,8 @@ import configurations.config as config #file with user and password (for privacy
 import argparse 
 import csv
 
-parser = argparse.ArgumentParser(description='Matrix Creation') 
+parser = argparse.ArgumentParser(description='Matrix Creation')
+parser.add_argument('--database', '-db', type = str, help = "tsv file with id_cogs descriptions and type")
 parser.add_argument('--drop', '-d', required=False, action="store_true", help='drop all views')
 parser.add_argument('--create_views', '-c', required=False, action="store_true", help='create intermediary views')
 
@@ -15,7 +16,7 @@ args = parser.parse_args()
 try:
     # DataBase Connexion
     conn = mc.connect(host = 'localhost',
-    database = 'fouille', 
+    database = db, 
     user = config.BD_USER, 
     password= config.BD_PASSWORD) 
                 
@@ -149,11 +150,10 @@ else:
               line[i]= 10000
       
       matrix.writerow(line)
-     
-finally:
-  conn.commit()
-  if(conn.is_connected()):
-      cursor.close() # close cursor
-      conn.close() # close connection
+
+  #End of connection
+    conn.commit() 
+    cursor.close() # close cursor
+    conn.close() # close connection
 
 
