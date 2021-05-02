@@ -11,7 +11,7 @@ else
     echo "${green}Please enter the name of the environnment you want to create"
     read -p "${green}Please Enter the name of your environnment${reset} " nameEnv
     echo "${green}Creating your conda env named $nameEnv ${reset}" 
-    conda env create --name $nameEnv --file environment.yml
+    conda env create --name $nameEnv --file installation/environment.yml
     fi
 
 if ! command -v mysql &> /dev/null; then 

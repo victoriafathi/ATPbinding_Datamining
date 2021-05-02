@@ -6,15 +6,18 @@ import csv
 import numpy as np
 
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.tree import export_graphviz
 from sklearn.metrics import classification_report
 from sklearn import metrics
 from sklearn.model_selection import train_test_split
 
+import matplotlib.pyplot as plt
+from sklearn.tree import export_graphviz
+from sklearn import tree
+
 
 #from sklearn.datasets import make_classification
 
-file = "../data.preparation/matrix_ind_var.tsv"
+file = "data.preparation/matrix_ind_var.tsv"
 source = csv.reader(open(file, 'r', encoding='utf-8'),delimiter='\t')
 
 data = []
@@ -166,17 +169,9 @@ print(classifier_total.predict(to_classify))
 #y_non_abc_pred=classifier.predict(X_non_abc)
 #print(classification_report(y_non_abc, y_non_abc_pred, target_names = ["Not ABC", "ABC"]))
 
-#export_graphviz(test, 
-#                out_file='tree.dot', 
-#                feature_names = header[1:-1],
-#                rounded = True, proportion = False, 
-#                precision = 2, filled = True)
-#
-#from subprocess import call
-#call(['dot', '-Tpng', 'tree.dot', '-o', 'tree.png', '-Gdpi=600'])
 
-#from IPython.display import Image
-#Image(filename = 'tree.png')
+plt.figure(figsize=(100,100)) 
+_ = tree.plot_tree(classifier_total.estimators_[0], feature_names = header[:-1],
+            filled=True, fontsize=6, rounded = True)
+plt.savefig('filename.png')
 
-# print(classifier.predict(to_classify))
-# print(classifier.oob_score_)

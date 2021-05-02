@@ -5,7 +5,7 @@ import mysql.connector as mc
 import argparse 
 import csv
 import sys
-sys.path.append("../configurations")
+sys.path.append("/configurations")
 import config
 
 
