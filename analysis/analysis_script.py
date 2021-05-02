@@ -77,10 +77,13 @@ data_non_abc, data_abc = split_table(data,y_indicatrix)
 
 induviduals_per_class = len(data_abc)
 
-selected_non_abc_index = np.random.choice(len(data_non_abc),induviduals_per_class, replace=False)
-selected_non_abc_indicatrix = [(i in selected_non_abc_index) for i in range(len(data_non_abc))]
+selected_non_abc_index = np.random.choice(
+        len(data_non_abc),induviduals_per_class, replace=False)
+selected_non_abc_indicatrix = [
+        (i in selected_non_abc_index) for i in range(len(data_non_abc))]
 
-data_non_abc_non_selected, data_non_abc_selected = split_table(data_non_abc,selected_non_abc_indicatrix)
+data_non_abc_non_selected, data_non_abc_selected = split_table(
+        data_non_abc,selected_non_abc_indicatrix)
 
 data_reduced = []
 data_reduced.extend(data_abc)
@@ -93,39 +96,76 @@ X_non_abc = extract_columns(data_non_abc_non_selected, X_columns)
 y_non_abc = extract_columns(data_non_abc_non_selected, y_columns)
 
 
+print("Data separation finished")
 #X, y = make_classification(n_samples=1000, n_features=4, n_informative=2, 
 #                           n_redundant=0, random_state=0, shuffle=True)
+print("\n=============================================\n")
+print("Full set training")
 
+X_total_train, X_total_test, y_total_train, y_total_test = train_test_split(
+        X_total, y_total, test_size=0.3) # 70% training and 30% test
 
-X_train, X_test, y_train, y_test = train_test_split(X_reduced, y_reduced, test_size=0.3) # 70% training and 30% test
+y_total_train = np.ravel(y_total_train)
+y_total_test = np.ravel(y_total_test)
 
-print("Data separation finished")
-
-
-classifier = RandomForestClassifier(oob_score = True, criterion = "entropy")
-classifier.fit(X_train,y_train)
+classifier_total = RandomForestClassifier(
+        criterion = "entropy", max_depth = 6, n_jobs = 6, n_estimators = 10)
+classifier_total.fit(X_total_train,y_total_train)
 
 print("Classifier trained")
 
-# test = classifier.estimators_[5]
-#print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
 print()
 print("Results:")
 
 print("Test set")
-y_test_pred=classifier.predict(X_test)
-print(classification_report(y_test, y_test_pred, target_names = ["Not ABC", "ABC"]))
+y_total_test_pred=classifier_total.predict(X_total_test)
+print(classification_report(y_total_test, y_total_test_pred, 
+                            target_names = ["Not ABC", "ABC"]))
 
 print("Training set")
-y_train_pred=classifier.predict(X_train)
-print(classification_report(y_train, y_train_pred, target_names = ["Not ABC", "ABC"]))
+y_total_train_pred=classifier_total.predict(X_total_train)
+print(classification_report(y_total_train, y_total_train_pred, 
+                            target_names = ["Not ABC", "ABC"]))
+
+
+print("Prediction of data to predict")
+print(classifier_total.predict(to_classify))
+
+#print("\n=============================================\n")
+#print("Balanced Training set")
+#
+#X_train, X_test, y_train, y_test = train_test_split(
+#        X_reduced, y_reduced, test_size=0.3) # 70% training and 30% test
+#
+#y_train = np.ravel(y_train)
+#y_test = np.ravel(y_test)
+#
+#classifier = RandomForestClassifier(oob_score = True, criterion = "entropy")
+#classifier.fit(X_train,y_train)
+#
+#print("Classifier trained")
+#
+#print()
+#print("Results:")
+#
+#print("Test set")
+#y_test_pred=classifier.predict(X_test)
+#print(classification_report(y_test, y_test_pred, 
+#                            target_names = ["Not ABC", "ABC"]))
+#
+#print("Training set")
+#y_train_pred=classifier.predict(X_train)
+#print(classification_report(y_train, y_train_pred, 
+#                            target_names = ["Not ABC", "ABC"]))
+
+
+#print("Prediction of data to predict")
+#print(classifier.predict(to_classify))
 
 #print("Non ABC set")
 #y_non_abc_pred=classifier.predict(X_non_abc)
 #print(classification_report(y_non_abc, y_non_abc_pred, target_names = ["Not ABC", "ABC"]))
 
-print("Classification")
-print(classifier.predict(to_classify))
 #export_graphviz(test, 
 #                out_file='tree.dot', 
 #                feature_names = header[1:-1],
