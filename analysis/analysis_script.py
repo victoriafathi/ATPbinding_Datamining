@@ -170,8 +170,7 @@ print(classifier_total.predict(to_classify))
 #print(classification_report(y_non_abc, y_non_abc_pred, target_names = ["Not ABC", "ABC"]))
 
 
-plt.figure(figsize=(100,100)) 
-_ = tree.plot_tree(classifier_total.estimators_[0], feature_names = header[:-1],
-            filled=True, fontsize=6, rounded = True)
-plt.savefig('filename.png')
+plt.figure(figsize=(350,90), dpi = 80) 
+tree.plot_tree(classifier_total.estimators_[0], feature_names = header[:-1],filled=True, fontsize=70, rounded = True)
+plt.savefig('DecisionTree1.pdf', dpi=1200, format='pdf', bbox_inches='tight')
 
