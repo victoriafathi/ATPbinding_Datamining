@@ -2,12 +2,15 @@
 # -*- coding: utf-8 -*-
 
 import mysql.connector as mc
-import configurations.config as config #file with user and password (for privacy)
 import argparse 
 import csv
+import sys
+sys.path.append("../configurations")
+import config
+
 
 parser = argparse.ArgumentParser(description='Matrix Creation')
-parser.add_argument('--database', '-db', type = str, help = "database you want to connect to")
+parser.add_argument('--database', '-b', type = str, help = "database you want to connect to")
 parser.add_argument('--drop', '-d', required=False, action="store_true", help='drop all views')
 parser.add_argument('--create_views', '-c', required=False, action="store_true", help='create intermediary views')
 
