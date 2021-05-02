@@ -11,7 +11,7 @@ else
     echo "${green}Please enter the name of the environnment you want to create"
     read -p "${green}Please Enter the name of your environnment${reset} " nameEnv
     echo "${green}Creating your conda env $nameEnv ${reset}" 
-    conda create --name $nameEnv --file installation/environment.yml
+    conda create --name $nameEnv --file ./environment.yml
 fi
 
 if [! command -v mysql &> /dev/null]; then
@@ -24,12 +24,13 @@ else
     printf "Please enter your username\n${reset}" 
     read -i -e username
     printf "${green}Please enter your password\n${reset}"
+    printf "${red}Note that this password is not encrypted and will be stored in clear text${reset}\n"
     read -s password
-    touch ../data.preparation/configurations/config.py
-    printf "#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\nBD_USER = '$username'\nBD_PASSWORD = '$password'\n" > ../data.preparation/configurations/config.py
+    mkdir ../configurations
+    touch ../configurations/config.py
+    printf "#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\nBD_USER = '$username'\nBD_PASSWORD = '$password'\n" > ../configurations/config.py
     printf "${green}if you need to change the user/password, follow this path${reset}\n"
     printf "data.preparation/configurations/config.py${reset}\n" 
-    printf "${red}Note that this file is not encrypted${reset}\n"
     printf "end of installation\n"
 fi
 exit
