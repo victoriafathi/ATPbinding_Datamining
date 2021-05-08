@@ -131,7 +131,7 @@ else:
             CREATE VIEW IND_VAR_MATRIX
             AS
             SELECT M.Gene_ID, M_Number, M_Min, M_Max, N_Number, N_Min, N_Max, S_Number, S_Min, S_Max, ABS(Start - End + 1) AS 
-            Gene_Size, Self_Score, ABC
+            Gene_Size, ABC
               FROM ((((M 
                 NATURAL JOIN N) 
                 NATURAL JOIN S) 
