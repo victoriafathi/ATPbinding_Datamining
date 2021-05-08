@@ -9,9 +9,9 @@ from configurations import config
 
 
 parser = argparse.ArgumentParser(description='Matrix Creation')
-parser.add_argument('--database', '-b', type = str, help = "database you want to connect to")
-parser.add_argument('--drop', '-d', required=False, action="store_true", help='drop all views')
-parser.add_argument('--create_views', '-c', required=False, action="store_true", help='create intermediary views')
+parser.add_argument('-b', '--database', type = str, help = "database you want to connect to")
+parser.add_argument('-d', '--drop', required=False, action="store_true", help='drop all views')
+parser.add_argument('-c', '--create_views', required=False, action="store_true", help='create intermediary views')
 
 args = parser.parse_args()
 
@@ -143,7 +143,7 @@ else:
     data = cursor.fetchall()
 
     # Writing tsv file for ind-var matrix 
-    matrix = csv.writer(open('matrix_ind_var.tsv', 'w', encoding='utf-8'),delimiter='\t')
+    matrix = csv.writer(open('data.preparation/matrix_ind_var.tsv', 'w', encoding='utf-8'),delimiter='\t')
     matrix.writerow([i[0] for i in cursor.description])
     for row in data:
       line = ["*" if el is None else el for el in row] #Replace empty values by * 
