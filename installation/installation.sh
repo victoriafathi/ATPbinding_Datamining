@@ -26,8 +26,7 @@ else
     printf "${green}Please enter your password\n${reset}"
     printf "${red}Note that this password is not encrypted and will be stored in clear text${reset}\n"
     read -s password
-    mkdir ../configurations
-    touch ../configurations/config.py
+    mkdir -p ../configurations
     printf "#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\nBD_USER = '$username'\nBD_PASSWORD = '$password'\n" > ../configurations/config.py
     printf "${green}if you need to change the user/password, follow this path${reset}\n"
     printf "data.preparation/configurations/config.py${reset}\n" 
