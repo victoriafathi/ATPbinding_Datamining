@@ -5,8 +5,7 @@ import mysql.connector as mc
 import argparse 
 import csv
 import sys
-sys.path.append("/configurations")
-import config
+from configurations import config
 
 
 parser = argparse.ArgumentParser(description='Matrix Creation')
