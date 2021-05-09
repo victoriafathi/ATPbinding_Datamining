@@ -100,9 +100,9 @@ Arguments :
   - `-n, --n_estimators number of estimators (default:100)`
   
   - `-c {gini,entropy} --criterion {gini,entropy}`<br>
-function to measure the quality of a split. Supported criteria are “gini” for the Gini         impurity and “entropy” for the information gain (default: entropy)`
+function to measure the quality of a split. Supported criteria are “gini” for the Gini impurity and “entropy” for the information gain (default: entropy)`
   
-  - `-b, --base base of the filenames in which the results are stored, without any extensions`
+  - `-b, --base base of the filenames in which the results are stored, without any extensions (default: results)`
   
   - `-t, --save_trees include if the trees should be plotted`
   
@@ -111,11 +111,10 @@ function to measure the quality of a split. Supported criteria are “gini” fo
 
 You can reproduce the results between executions with `-s`.
 
-You can save results and plot of the trees with `-t` and `-b` arugments. Both are stored in `analysis/results/`.
+You can save results and plots with `-t` and `-b` arguments. Both are stored in `analysis/`.
 
 # Contact
 
-If you encounter and difficulty contact us
-
+If you encounter and difficulty contact us at victoria.fathi@univ-tlse3.com or sophia.toffoli@univ-tlse3.fr .
 
 </div>
