@@ -79,17 +79,43 @@ The matrix is written in `data.preparation/matrix_ind_var.tsv` to avoid further 
 `analysis/analysis_script.py` computes the training, performances evaluation and classification of the unknown genes. 
 This classifier is based on the Random Forest method implemented by scikit learn library. 
 
-*This script doesn't required any arguments.*
 
 Various parameters have been tested to improve classifier performances: 
 
 - Gini and Enthropy criterion 
 - Training set composition : 
-  - 50% ABC, 50% non-ABC
+  - balanced : 50% ABC, 50% non-ABC
   - proportion observed in nature
-- depth of trees
-- number of trees 
+- depth of estimators (trees)
+- number of estimators (trees)
 
-The results are directly printed in console and also written in 
+Arguments :
+
+  - `-h, --help  show this help message and exit`
+  
+  - `-m {full,balanced}, --mode {full,balanced} Train on full set or balanced set (default : full set)`
+  
+  - `-d, --max_depth max depth of the each tree (default : None)`
+  
+  - `-n, --n_estimators number of estimators (default:100)`
+  
+  - `-c {gini,entropy} --criterion {gini,entropy}`<br>
+function to measure the quality of a split. Supported criteria are “gini” for the Gini         impurity and “entropy” for the information gain (default: entropy)`
+  
+  - `-b, --base base of the filenames in which the results are stored, without any extensions`
+  
+  - `-t, --save_trees include if the trees should be plotted`
+  
+  - `-s , --seed   32-bit integer to seed the run (default: 1148823)`
+
+
+You can reproduce the results between executions with `-s`.
+
+You can save results and plot of the trees with `-t` and `-b` arugments. Both are stored in `analysis/results/`.
+
+# Contact
+
+If you encounter and difficulty contact us
+
 
 </div>

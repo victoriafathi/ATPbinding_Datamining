@@ -1660,19 +1660,32 @@ div.tocify {
 <p>The matrix is written in <code>data.preparation/matrix_ind_var.tsv</code> to avoid further connection problems to the database and reduce execution time.</p>
 <h2 id="analysis">Analysis</h2>
 <p><code>analysis/analysis_script.py</code> computes the training, performances evaluation and classification of the unknown genes. This classifier is based on the Random Forest method implemented by scikit learn library.</p>
-<p><em>This script doesn’t required any arguments.</em></p>
 <p>Various parameters have been tested to improve classifier performances:</p>
 <ul>
 <li>Gini and Enthropy criterion</li>
 <li>Training set composition :
 <ul>
-<li>50% ABC, 50% non-ABC</li>
+<li>balanced : 50% ABC, 50% non-ABC</li>
 <li>proportion observed in nature</li>
 </ul></li>
-<li>depth of trees</li>
-<li>number of trees</li>
+<li>depth of estimators (trees)</li>
+<li>number of estimators (trees)</li>
 </ul>
-<p>The results are directly printed in console and also written in</p>
+<p>Arguments :</p>
+<ul>
+<li><p><code>-h, --help  show this help message and exit</code></p></li>
+<li><p><code>-m {full,balanced}, --mode {full,balanced} Train on full set or balanced set (default : full set)</code></p></li>
+<li><p><code>-d, --max_depth max depth of the each tree (default : None)</code></p></li>
+<li><p><code>-n, --n_estimators number of estimators (default:100)</code></p></li>
+<li><p><code>-c {gini,entropy} --criterion {gini,entropy}</code><br> function to measure the quality of a split. Supported criteria are “gini” for the Gini impurity and “entropy” for the information gain (default: entropy)`</p></li>
+<li><p><code>-b, --base base of the filenames in which the results are stored, without any extensions</code></p></li>
+<li><p><code>-t, --save_trees include if the trees should be plotted</code></p></li>
+<li><p><code>-s , --seed   32-bit integer to seed the run (default: 1148823)</code></p></li>
+</ul>
+<p>You can reproduce the results between executions with <code>-s</code>.</p>
+<p>You can save results and plot of the trees with <code>-t</code> and <code>-b</code> arugments. Both are stored in <code>analysis/results/</code>.</p>
+<h1 id="contact">Contact</h1>
+<p>If you encounter and difficulty contact us</p>
 </div>
 
 
