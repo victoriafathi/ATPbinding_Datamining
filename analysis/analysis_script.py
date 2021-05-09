@@ -109,7 +109,6 @@ def extract_data(data, X_columns, y_columns, mode):
 ###############################################################################
 
 if __name__=="__main__":
-    np.random.seed(1148823)
     
     # Parser arguments
     parser = argparse.ArgumentParser(description='Analysis')
@@ -130,9 +129,12 @@ if __name__=="__main__":
         + 'are stored, without any extensions.')
     parser.add_argument('-t','--save_trees', required=False, 
         action="store_true", help='include if the trees should be plotted')
+    parser.add_argument('-s','--seed', required=False, type=int, default=1148823,
+        help='32-bit integer to seed the run (default: 1148823)')
     
     args = parser.parse_args()
     
+    np.random.seed(args.seed)    
     
     # Data loading
     infile = "data.preparation/matrix_ind_var.tsv"
