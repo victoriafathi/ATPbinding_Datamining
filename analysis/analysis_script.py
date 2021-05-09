@@ -126,7 +126,7 @@ if __name__=="__main__":
         + 'and “entropy” for the information gain (default: entropy)')
     parser.add_argument('-b','--base', type=str, required=False, 
         default='results', help='base of the filenames in which the results '
-        + 'are stored, without any extensions.')
+        + 'are stored, without any extensions (default: results)')
     parser.add_argument('-t','--save_trees', required=False, 
         action="store_true", help='include if the trees should be plotted')
     parser.add_argument('-s','--seed', required=False, type=int, default=1148823,
