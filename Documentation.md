@@ -36,7 +36,7 @@ Versions used for the project :
   - conda environment with all the required libraries
   - retrieve username and password to connect to the desired database
   
-*Note: username and password are stored localy in the following file `data.preparation/configurations/config.py`. *
+*Note: username and password are stored localy in the following file `data.preparation/configurations/config.py`.*
 
 **THIS FILE IS NOT ENCRYPTED AND USERNAME AND PASSWORD ARE STORED IN CLEAR !**
 
