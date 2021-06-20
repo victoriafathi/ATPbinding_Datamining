@@ -115,6 +115,6 @@ You can save results and plots with `-t` and `-b` arguments. Both are stored in 
 
 # Contact
 
-If you encounter and difficulty contact us at victoria.fathi@univ-tlse3.com or sophia.toffoli@univ-tlse3.fr .
+If you encounter any difficulty contact us at victoria.fathi@univ-tlse3.com or sophia.toffoli@univ-tlse3.fr .
 
 </div>
